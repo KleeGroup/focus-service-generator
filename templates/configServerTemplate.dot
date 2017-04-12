@@ -1,11 +1,10 @@
 {{= it.destFolder + '/' + it.filename }}.js
 import apiDriverBuilder from '../../../utilities/apiDriver';
-import {apiRoot} from '../index'
 // {{= it.name }}
 export default apiDriverBuilder({
 {{ for(var operation of it.operations) { }}
     {{= operation.name }}: {
-        url: apiRoot + '{{= operation.path + (operation.queryString.length > 0 ? '?' + operation.queryString : '') }}',
+        url: __API_ROOT__ + '{{= operation.path + operation.queryString }}',
         method: '{{= operation.verb.toUpperCase() }}'
     }{{= operation === it.operations[it.operations.length -1] ? '' : ','}}
 {{ } }}
