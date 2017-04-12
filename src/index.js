@@ -10,8 +10,8 @@ import { simpleGet } from './http-utilities';
 
 // Variable
 const {
-    TEMPLATE_FOLDER = './templates',
-    DEST_FOLDER = './test',
+    TEMPLATE_FOLDER = './node_modules/focus-service-generator/templates',
+    DEST_FOLDER = './app/config/server/generated',
     EOL = '\n',
     SWAGGER_SOURCE
 } = process.env;
