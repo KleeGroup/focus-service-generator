@@ -1,17 +1,17 @@
 {
     "name": "focus-service-generator",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "File generation based on Swagger Interface",
     "main": "./index.js",
     "bin": {
         "focus-service-generator": "./index.js"
     },
     "scripts": {
+        "prepublish": "npm run build",
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "./node_modules/.bin/babel ./src --out-dir .",
         "watch": "./node_modules/.bin/babel ./src --out-dir . --watch",
-        "example": "better-npm-run example",
-        "start": "node ./index.js"
+        "example": "better-npm-run example"
     },
     "babel": {
         "presets": [
