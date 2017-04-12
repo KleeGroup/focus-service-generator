@@ -1,0 +1,50 @@
+{
+    "name": "focus-service-generator",
+    "version": "1.0.0",
+    "description": "File generation based on Swagger Interface",
+    "main": "./index.js",
+    "bin": {
+        "focus-service-generator": "./index.js"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "./node_modules/.bin/babel ./src --out-dir .",
+        "watch": "./node_modules/.bin/babel ./src --out-dir . --watch",
+        "example": "better-npm-run example",
+        "start": "node ./index.js"
+    },
+    "babel": {
+        "presets": [
+            "focus"
+        ]
+    },
+    "author": "focus@kleegroup.com",
+    "homepage": "https://github.com/KleeGroup/focus-service-generator#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/KleeGroup/focus-service-generator.git"
+    },
+    "license": "MIT",
+    "betterScripts": {
+        "example": {
+            "command": "node ./index.js",
+            "env": {
+                "TEMPLATE_FOLDER": "./templates",
+                "DEST_FOLDER": "./test",
+                "EOL": "\r\n",
+                "SWAGGER_SOURCE_OLD": "file:./swaggerSagess.json",
+                "SWAGGER_SOURCE": "http://cvm_vision_rec:9090/vision-app/swaggerApi"
+            }
+        }
+    },
+    "devDependencies": {
+        "babel-cli": "6.24.1",
+        "babel-preset-focus": "git://github.com/KleeGroup/babel-preset-focus.git#refreshing-updating",
+        "better-npm-run": "0.0.15",
+        "eslint-config-focus": "git://github.com/KleeGroup/eslint-config-focus.git#updating-refreshing"
+    },
+    "dependencies": {
+        "dot": "1.1.1",
+        "lodash": "4.17.4"
+    }
+}
