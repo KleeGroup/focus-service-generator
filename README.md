@@ -25,3 +25,8 @@
 - `SWAGGER_SOURCE` (required): JSON of Swagger, either in file (`'file:./my/swagger/file.json'`) or by HTTP request (`http://host/swagger/url`)
 - `EOL` (default `'\n'`): End of line in generated files
 
+## Customising
+
+If the default templates does not suit your needs, just change the template folder, and create your own.
+
+The first line of the render of a template must be the filepath.
