@@ -3,7 +3,7 @@
 
 import fs from 'fs';
 import dot from 'dot';
-import { entries } from 'lodash'
+import entries from 'lodash.topairs';
 
 import { parseSwagger } from './swagger-utilities';
 import { simpleGet } from './http-utilities';

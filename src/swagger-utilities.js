@@ -1,4 +1,4 @@
-import { entries } from 'lodash'
+import entries from 'lodash.topairs';
 
 /**
  * Function extracting the type from the schema in swagger interface.

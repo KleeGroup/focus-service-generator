@@ -7,10 +7,10 @@
         "focus-service-generator": "./index.js"
     },
     "scripts": {
-        "prepublish": "npm run build",
+        "prepare": "npm run build",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "./node_modules/.bin/babel ./src --out-dir .",
-        "watch": "./node_modules/.bin/babel ./src --out-dir . --watch",
+        "build": "better-npm-run build",
+        "watch": "better-npm-run watch",
         "example": "better-npm-run example"
     },
     "babel": {
@@ -26,6 +26,20 @@
     },
     "license": "MIT",
     "betterScripts": {
+        "build": {
+            "command": "babel ./src --out-dir .",
+            "env": {
+                "NODE_ENV": "production",
+                "LEGACY_EXPORTS": "true"
+            }
+        },
+        "watch": {
+            "command": "babel ./src --out-dir . --watch",
+            "env": {
+                "NODE_ENV": "production",
+                "LEGACY_EXPORTS": "true"
+            }
+        },
         "example": {
             "command": "node ./index.js",
             "env": {
@@ -38,13 +52,13 @@
         }
     },
     "devDependencies": {
-        "babel-cli": "6.24.1",
-        "babel-preset-focus": "git://github.com/KleeGroup/babel-preset-focus.git#refreshing-updating",
-        "better-npm-run": "0.0.15",
-        "eslint-config-focus": "git://github.com/KleeGroup/eslint-config-focus.git#updating-refreshing"
+        "babel-cli": "6.26.0",
+        "babel-preset-focus": "1.0.0-beta1",
+        "better-npm-run": "0.1.0",
+        "eslint-config-focus": "0.6.0"
     },
     "dependencies": {
-        "dot": "1.1.1",
-        "lodash": "4.17.4"
+        "dot": "1.1.2",
+        "lodash.topairs": "4.3.0"
     }
 }
