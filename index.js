@@ -12,7 +12,9 @@ var _dot = require('dot');
 
 var _dot2 = _interopRequireDefault(_dot);
 
-var _lodash = require('lodash');
+var _lodash = require('lodash.topairs');
+
+var _lodash2 = _interopRequireDefault(_lodash);
 
 var _swaggerUtilities = require('./swagger-utilities');
 
@@ -76,7 +78,7 @@ var handleSwaggerGeneration = function handleSwaggerGeneration(data) {
         };
 
         // Let's apply each template
-        (0, _lodash.entries)(templateRenderer).forEach(function (_ref) {
+        (0, _lodash2.default)(templateRenderer).forEach(function (_ref) {
             var _ref2 = _slicedToArray(_ref, 2),
                 renderer = _ref2[1];
 

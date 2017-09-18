@@ -7,7 +7,11 @@ exports.parseSwagger = undefined;
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-var _lodash = require('lodash');
+var _lodash = require('lodash.topairs');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Function extracting the type from the schema in swagger interface.
@@ -39,13 +43,13 @@ function parseSwagger(swaggerStr) {
     var swaggerObject = JSON.parse(swaggerStr);
     var result = {};
     // Let's iterate over the paths in Swagger : http://swagger.io/specification/#paths-object-29
-    (0, _lodash.entries)(swaggerObject.paths).forEach(function (_ref) {
+    (0, _lodash2.default)(swaggerObject.paths).forEach(function (_ref) {
         var _ref2 = _slicedToArray(_ref, 2),
             pathName = _ref2[0],
             pathObj = _ref2[1];
 
         // Then let's iterate over each operation : http://swagger.io/specification/#operation-object-36
-        (0, _lodash.entries)(pathObj).forEach(function (_ref3) {
+        (0, _lodash2.default)(pathObj).forEach(function (_ref3) {
             var _ref4 = _slicedToArray(_ref3, 2),
                 httpVerb = _ref4[0],
                 data = _ref4[1];
@@ -65,7 +69,7 @@ function parseSwagger(swaggerStr) {
 
             // Let's get the response type in case of success : http://swagger.io/specification/#responses-object-54
             var responseType = 'void';
-            (0, _lodash.entries)(data.responses).filter(function (_ref5) {
+            (0, _lodash2.default)(data.responses).filter(function (_ref5) {
                 var _ref6 = _slicedToArray(_ref5, 1),
                     httpResponseCode = _ref6[0];
 
